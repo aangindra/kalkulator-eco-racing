@@ -73,17 +73,19 @@ jQuery(document).ready(function () {
    });
    jQuery(".eco-nav .nav-link").on("click", function(){
      const idTab = jQuery(this).attr("href");
+     jQuery(idTab).siblings().removeClass('in');
+     jQuery(idTab).addClass("in");
      jQuery(".eco-tab .tab-pane.active.show #textError").addClass("d-none");
      jQuery(".eco-tab .tab-pane.active.show input").val("");
      jQuery(".eco-result").addClass("d-none");
    })
 });
 function formatRupiah(angka, prefix){
-  var number_string = angka.replace(/[^,\d]/g, '').toString(),
+  let number_string = angka.replace(/[^,\d]/g, '').toString(),
   split   		= number_string.split(','),
   sisa     		= split[0].length % 3,
-  rupiah     		= split[0].substr(0, sisa),
-  ribuan     		= split[0].substr(sisa).match(/\d{3}/gi);
+  rupiah     	= split[0].substr(0, sisa),
+  ribuan     	= split[0].substr(sisa).match(/\d{3}/gi);
 
   // tambahkan titik jika yang di input sudah menjadi angka ribuan
   if(ribuan){

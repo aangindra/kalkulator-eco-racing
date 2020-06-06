@@ -15,6 +15,9 @@
   text-decoration: none;
   color: #fff;
 }
+.eco-nav .nav-link:hover {
+  background-color: inherit !important;
+}
 .eco-nav .nav-item a::not(.active):hover {
 	color: #f1f1f1;
 }
